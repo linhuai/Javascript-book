@@ -8,4 +8,10 @@
     * [1.4 函数柯里化](Chapter1/函数柯里化.md)
     * [1.5 函数重写](Chapter1/函数重写.md)
 * [第二章 数组](Chapter2/README.md)
+* [第三章 数据类型及变量](Chapter3/README.md)
+* [第四章 对象](Chapter4/README.md)
+* [第五章 继承](Chapter5/README.md)
+* [第六章 闭包](Chapter6/README.md)
+* [第七章 算法](Chapter7/README.md)
+* [第八章 工具](Chapter8/README.md)
 
