@@ -1,0 +1,612 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第八章 工具 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../Chapter7/深复制.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章 高级技巧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/作用域安全的构造函数.html">
+            
+                <a href="../Chapter1/作用域安全的构造函数.html">
+            
+                    
+                    1.1 作用域安全的构造函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/惰性载入函数.html">
+            
+                <a href="../Chapter1/惰性载入函数.html">
+            
+                    
+                    1.2 惰性载入函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/函数绑定.html">
+            
+                <a href="../Chapter1/函数绑定.html">
+            
+                    
+                    1.3 函数绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/函数柯里化.html">
+            
+                <a href="../Chapter1/函数柯里化.html">
+            
+                    
+                    1.4 函数柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/函数重写.html">
+            
+                <a href="../Chapter1/函数重写.html">
+            
+                    
+                    1.5 函数重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章 数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    第三章 数据类型及变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter5/">
+            
+                <a href="../Chapter5/">
+            
+                    
+                    第五章 继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    第六章 闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    第七章 算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Chapter7/倒计时.html">
+            
+                <a href="../Chapter7/倒计时.html">
+            
+                    
+                    7.1 倒计时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Chapter7/深复制.html">
+            
+                <a href="../Chapter7/深复制.html">
+            
+                    
+                    7.2 深复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第八章 工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第八章 工具</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x516B;&#x7AE0;-&#x5DE5;&#x5177;">&#x7B2C;&#x516B;&#x7AE0; &#x5DE5;&#x5177;</h1>
+<h3 id="&#x4E00;&#x3001;env">&#x4E00;&#x3001;env</h3>
+<pre><code>const inBrowser = typeof window !== &apos;undefined&apos;
+const ua = inBrowser &amp;&amp; navigator.toLowserCase()
+const inWeChartDevTools = ua &amp;&amp; /wechartdevtools/.test(ua)
+const inAndroid = ua &amp;&amp; ua.indexOf(&apos;android&apos;)
+</code></pre><h3 id="&#x4E8C;&#x3001;-debug">&#x4E8C;&#x3001; debug</h3>
+<pre><code>function log (msg) {
+  console.log(msg)
+}
+
+function warn (msg) {
+  console.error(msg)
+}
+</code></pre><h3 id="&#x4E09;&#x3001;dom">&#x4E09;&#x3001;DOM</h3>
+<pre><code>function addEvent (el, type, fn, capture) {
+  el.addEventListener(type, fn, !!capture)
+}
+
+function removeEvent (el, type, fn, capture) {
+  el.removeEventListener(type, fn, !!capture)
+ }
+
+function insertBefore(el, target) {
+  el.parentNode.insertBefore(el, target)
+}
+
+function appendChild(el, target) {
+  el.appendChild(target)
+}
+
+function prepend(el, target) {
+  if (target.firstChild) {
+    el.insertBefore(target.firstChild)
+  } else {
+    el.appendChild(target)
+  }
+}
+
+function removeChild(el, child) {
+  el.removeChild(child)
+}
+</code></pre><h3 id="&#x56DB;&#x3001;-event">&#x56DB;&#x3001; Event</h3>
+<pre><code>// Better-scroll
+function BScroll () {
+  this._events = {}
+}
+plugin_name.prototype.on = function (type, fn, context = this) {
+  if (!this._events[type]) {
+    this._events[type] = []
+  }
+  this._events[type].push([fn, context])
+}
+BScroll.prototype.once = function (type, fn, context = this) {
+  function magic () {
+    this.off(type, magic)
+    fn.apply(context, arguments)
+  }
+  // To expose the corresponding function method in order to execute off method
+  magic.fn = fn
+  this.on(type, magic)
+}
+BScroll.prototype.off = function (type, fn) {
+  let _events = this._events[type]
+  if (!_events) return
+  let count = _events.length
+  while(count--) {
+    if (_events[count][0] === fn || (_events[count][0] &amp;&amp; _events[count][0].fn === fn)) {
+    _events.splice(count, 1)
+  }
+}
+BScroll.prototype.trigger = function (type) {
+  let events = this._evnets[type]
+  if (!events) return
+
+  let len = events.length
+  let eventsCopy = [...events]
+  for (let i = o; i &lt; len; i++) {
+    let event = eventsCopy[i]
+    let [fn, context] = event
+    if (fn) {
+      fn.apply(context, [].slice.call(arguments, 1)))
+    }
+  }
+}
+</code></pre><pre><code>// swiperClass
+class SwiperClass {
+  constructor (params = {}) {
+    const self = this
+    self.params = params
+
+    // Events
+    self.eventsListeners = {}
+  }
+
+  on (events, handler, priority) {
+    const self = this
+    if (typeof handler !==&apos;function&apos;) return self
+    const method = priority ? &apos;unshift&apos; : &apos;push&apos;
+    events.split(&apos; &apos;).forEach(event =&gt; {
+      if (!self.eventsListeners[event]) self.eventsListeners[event] = []
+      self.eventsListeners[event][method](handler)
+    }
+    return self
+  }
+
+  once (events, handler, priority) {
+    const self = this
+    if (typeof handler !== &apos;function&apos;) return self
+    function onceHandler (...args) {
+      handler.apply(self, args)
+      self.off(events, onceHandler)
+    }
+    return self.on(events, onceHandler, priority)
+  }
+
+  off (events, handler) {
+    const self = this
+    if (!self.events[event]) return self
+    events.split(&apos; &apos;).forEach(event =&gt; {
+      if (typeof handler === &apos;undefined&apos;) {
+        self.eventsListeners[event] = []
+      } else if (self.eventsListeners[event] &amp;&amp; self.eventsListeners[event].length) {
+        self.eventsListeners[event].forEach((eventHandler, index) =&gt; {
+          if (eventHandler === handler) {
+            self.eventsListeners[event].splice(index, 1)
+          }
+        }
+      }
+    }
+
+  }
+}
+</code></pre><h3 id="&#x4E94;&#x3001;utils">&#x4E94;&#x3001;Utils</h3>
+<pre><code>function deleteProps(obj) {
+  const object = obj
+  Object.keys(object).forEach(key =&gt; {
+    try {
+      object[key] = null
+    } catch (e) {
+      // no getter for object
+    }
+    try {
+      delete object[key]
+    } catch (e) {
+      // something got wrong
+    }
+  }
+}
+
+function nextTick(callback, delay = 0) {
+  return setTimeout(callback, delay)
+}
+
+function parseUrlQuery (url) {
+  const query = {}
+  let urlToParse = url || window.location.href
+  let i
+  let params
+  let param
+  let length
+  if (typeof urlToParse === &apos;string&apos; &amp;&amp; urlToParse.length) {
+    urlToParse = urlToParse.indexOf(&apos;?&apos;) &gt; -1 ? urlToParse.replace(/\S*/, &apos;&apos;) : &apos;&apos;
+    params = urlToParse.split(&apos;&amp;&apos;).filter(paramsPart =&gt; paramsPart !== &apos;&apos;)
+    length = params.length
+
+    for(i = 0; i &lt; length; i++) {
+      param = params[i].replace(/#\S+/g, &apos;&apos;).split(&apos;=&apos;)
+
+      // here need some code
+    }
+  }
+
+}
+
+function isObject (obj) {
+  return typeof o === &apos;object&apos; &amp;&amp; o !== null &amp;&amp; o.constructor &amp;&amp; o.constructor === Object
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Chapter7/深复制.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 7.2 深复制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第八章 工具","level":"1.9","depth":1,"previous":{"title":"7.2 深复制","level":"1.8.2","depth":2,"path":"Chapter7/深复制.md","ref":"Chapter7/深复制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter8/README.md","mtime":"2018-11-17T18:09:31.780Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-28T03:02:43.068Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
