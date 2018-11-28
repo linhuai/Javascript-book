@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第五章 继承 · GitBook</title>
+        <title>7.3 数组去重 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../Chapter6/" />
+    <link rel="next" href="../Chapter8/" />
     
     
-    <link rel="prev" href="../Chapter4/" />
+    <link rel="prev" href="深复制.html" />
     
 
     </head>
@@ -225,9 +225,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../Chapter5/">
             
-                <a href="./">
+                <a href="../Chapter5/">
             
                     
                     第五章 继承
@@ -251,9 +251,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../Chapter7/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../Chapter7/">
+                <a href="./">
             
                     
                     第七章 算法
@@ -265,9 +265,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../Chapter7/倒计时.html">
+        <li class="chapter " data-level="1.8.1" data-path="倒计时.html">
             
-                <a href="../Chapter7/倒计时.html">
+                <a href="倒计时.html">
             
                     
                     7.1 倒计时
@@ -278,9 +278,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../Chapter7/深复制.html">
+        <li class="chapter " data-level="1.8.2" data-path="深复制.html">
             
-                <a href="../Chapter7/深复制.html">
+                <a href="深复制.html">
             
                     
                     7.2 深复制
@@ -291,9 +291,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../Chapter7/数组去重.html">
+        <li class="chapter active" data-level="1.8.3" data-path="数组去重.html">
             
-                <a href="../Chapter7/数组去重.html">
+                <a href="数组去重.html">
             
                     
                     7.3 数组去重
@@ -384,7 +384,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >第五章 继承</a>
+        <a href=".." >7.3 数组去重</a>
     </h1>
 </div>
 
@@ -399,79 +399,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7B2C;&#x4E94;&#x7AE0;-&#x7EE7;&#x627F;">&#x7B2C;&#x4E94;&#x7AE0; &#x7EE7;&#x627F;</h1>
-<h3 id="1&#xFF64;-&#x5B9E;&#x73B0;-f1-&#x7EE7;&#x627F;-f2-&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;">1&#xFF64; &#x5B9E;&#x73B0; f1 &#x7EE7;&#x627F; f2 &#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;</h3>
-<pre><code>function f2 () {
-    this.a2 = 3
-    this.b2 = 4
+                                <h1 id="73-&#x6570;&#x7EC4;&#x53BB;&#x91CD;">7.3 &#x6570;&#x7EC4;&#x53BB;&#x91CD;</h1>
+<h3 id="&#x65B9;&#x6CD5;&#x4E00;-&#x4F7F;&#x7528;-es6-set&#x3001;arrayfrom">&#x65B9;&#x6CD5;&#x4E00; &#x4F7F;&#x7528; ES6 Set&#x3001;Array.from</h3>
+<p><strong>&#x539F;&#x7406;</strong></p>
+<ol>
+<li><p>ES6 &#x4E2D;&#x65B0;&#x589E;&#x4E86; Set &#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x6570;&#x7EC4;&#xFF0C;&#x4F46; <strong>&#x5B83;&#x7684;&#x6210;&#x5458;&#x90FD;&#x662F;&#x552F;&#x4E00;&#x7684;</strong> &#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;</p>
+</li>
+<li><p>ES6 &#x4E2D;&#x65B0;&#x589E;&#x4E86; Array.from &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x7C7B;&#x6570;&#x7EC4;&#x8F6C;&#x4E3A;&#x6570;&#x7EC4;</p>
+</li>
+</ol>
+<p><strong>&#x4EE3;&#x7801;</strong></p>
+<pre><code>function unique (arr) {
+  if (Object.prototype.toString.call(arr) !== &apos;[object Array]&apos;) {
+    return false
+  }
+  return Array.from(new Set(arr))
 }
-
-function f1 () {
-    this.a1 = 1
-    this.a2 = 2
-}
-</code></pre><p>&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</p>
-<pre><code>f1.prototype = new f2()
-f1.prototype.constructor= f1
-</code></pre><h3 id="2&#xFF64;-&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#xFF0C;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;">2&#xFF64; &#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#xFF0C;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;</h3>
-<p>Javascript &#x8981;&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E09;&#x5C42;&#x542B;&#x4E49;
-&#xFF08;1&#xFF09;&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x5171;&#x4EAB;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</p>
-<p>&#xFF08;2) &#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5; &#x6216; &#x6269;&#x5C55;&#x65B0;&#x65B9;&#x6CD5;</p>
-<p>&#xFF08;3) &#x5B50;&#x7C7B;&#x548C;&#x7236;&#x7C7B;&#x90FD;&#x662F;&#x5B50;&#x7C7B;&#x5B9E;&#x4F8B;&#x7684;&#x201C;&#x7C7B;&#x578B;&#x201D;</p>
-<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
-<p>&#x4F7F;&#x7528;&#x539F;&#x578B;&#x7EE7;&#x627F;&#xFF0C;&#x4E2D;&#x95F4;&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A; Child &#x7684;&#x539F;&#x578B;&#x5C5E;&#x6027;&#xFF0C;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x5C5E;&#x6027;&#x518D;&#x6307;&#x5411;&#x7236;&#x7C7B;&#x578B;&#x7684;&#x539F;&#x578B;&#x5C5E;&#x6027;&#xFF0C;&#x9632;&#x6B62;&#x6240;&#x6709;&#x5B50;&#x7C7B;&#x548C;&#x7236;&#x7C7B;&#x539F;&#x578B;&#x5C5E;&#x6027;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x5F53;&#x4FEE;&#x6539;&#x5B50;&#x7C7B;&#x7684;&#x539F;&#x578B;&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x5B50;&#x7C7B;&#x548C;&#x7236;&#x7C7B;</p>
-<pre><code>function extend(Child, Parent) {
-    var F = function () { }
-    F.prototype = Parent.prototype
-    Child.prototype = new F()
-    Child.prototype.constructor = Child
-    Child.base = Parent.prototype
-}
-</code></pre><pre><code>function Parent(name) {
-    this.aa = 123
-    this.getName = function () { // &#x4F7F;&#x7528;&#x95ED;&#x5305;&#x6A21;&#x62DF;&#x79C1;&#x6709;&#x5C5E;&#x6027;
-        return name
+</code></pre><h3 id="&#x65B9;&#x6CD5;&#x4E8C;-&#x4F7F;&#x7528;-es5-&#x5B9E;&#x73B0;">&#x65B9;&#x6CD5;&#x4E8C; &#x4F7F;&#x7528; ES5 &#x5B9E;&#x73B0;</h3>
+<p><strong>&#x4EE3;&#x7801;</strong></p>
+<pre><code>function unique (arr) {
+  /* &#x5224;&#x65AD;&#x662F;&#x4E0D;&#x662F;&#x6570;&#x7EC4; */
+  if (Object.prototype.toString.call(arr) !== &apos;[object Array]&apos;) {
+    return false
+  }
+  let result = []
+  let tempObj = {}
+  arr.forEach(item =&gt; {
+    if (!obj[item]) {
+      result.push(item)
+      tempObj[item] = 1
     }
-    this.setName = function (value) {
-        name = value
-    }
+  })
+  return result
 }
-
-Parent.prototype.print = function() {
-    alert(&apos;print&apos;)
-}
-Parent.prototype.hello = function () {
-    alert(this.getName() + &apos;Parent&apos;)
-}
-
-function Child(name, age) {
-    Parent.apply(this, arguments) // &#x8C03;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x7EE7;&#x627F;&#x7236;&#x7C7B;
-    this.age = age
-}
-
-extend(Child, Parent) // &#x7EE7;&#x627F; Parent
-
-Child.prototype.hello = function () { // &#x91CD;&#x5199;&#x7236;&#x7C7B; hello &#x65B9;&#x6CD5;
-    alert(this.getName() + &apos;Child&apos;)
-    Parent.prototype.apply(this, arguments) // &#x8C03;&#x7528;&#x7236;&#x7C7B;&#x540C;&#x540D;&#x65B9;&#x6CD5;
-}
-
-// &#x5B50;&#x7C7B;&#x65B9;&#x6CD5;
-Child.prototype.doSomeghing = function () {
-    alert(this.age + &quot;child doSomething&quot;)
-}
-
-var p1 = new CHild(&apos;Jack&apos;, 22)
-var p2 = new Child(&apos;Davi&apos;, 33)
-
-p1.hello()
-p2.hello()
-
-p1.doSomthing()     // &#x5B50;&#x7C7B;&#x65B9;&#x6CD5;
-p1.print() //&#x7236;&#x7C7B;&#x65B9;&#x6CD5;
-
-alert(p1 instanceof CHild) // true
-alert(p1 instanceof Parent) // true
 </code></pre>
                                 
                                 </section>
@@ -499,12 +459,12 @@ alert(p1 instanceof Parent) // true
 
             
                 
-                <a href="../Chapter4/" class="navigation navigation-prev " aria-label="Previous page: 第四章 对象">
+                <a href="深复制.html" class="navigation navigation-prev " aria-label="Previous page: 7.2 深复制">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../Chapter6/" class="navigation navigation-next " aria-label="Next page: 第六章 闭包">
+                <a href="../Chapter8/" class="navigation navigation-next " aria-label="Next page: 第八章 工具">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -515,7 +475,7 @@ alert(p1 instanceof Parent) // true
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五章 继承","level":"1.6","depth":1,"next":{"title":"第六章 闭包","level":"1.7","depth":1,"path":"Chapter6/README.md","ref":"Chapter6/README.md","articles":[]},"previous":{"title":"第四章 对象","level":"1.5","depth":1,"path":"Chapter4/README.md","ref":"Chapter4/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/README.md","mtime":"2018-11-17T18:09:55.129Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-28T03:02:43.068Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3 数组去重","level":"1.8.3","depth":2,"next":{"title":"第八章 工具","level":"1.9","depth":1,"path":"Chapter8/README.md","ref":"Chapter8/README.md","articles":[]},"previous":{"title":"7.2 深复制","level":"1.8.2","depth":2,"path":"Chapter7/深复制.md","ref":"Chapter7/深复制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter7/数组去重.md","mtime":"2018-11-28T07:13:57.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-28T03:02:43.068Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

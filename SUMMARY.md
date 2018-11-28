@@ -15,5 +15,8 @@
 * [第七章 算法](Chapter7/README.md)
     * [7.1 倒计时](Chapter7/倒计时.md)
     * [7.2 深复制](Chapter7/深复制.md)
+    * [7.3 数组去重](Chapter7/数组去重.md)
 * [第八章 工具](Chapter8/README.md)
+* [other](Other/README.md)
+    * [页面的生命周期](Other/页面的生命周期.md)
 
